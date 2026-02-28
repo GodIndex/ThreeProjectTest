@@ -5,7 +5,7 @@ public class GoTest extends PreTestBase {
     @Test
     void FirstUnTest() {
 
-        ValidatorOpenURL();
+        BrowserCongiureValidatorOpenPage();
         HoverEffectMediaButton();
         VacantionsButtonClick();
 

@@ -1,22 +1,24 @@
 import com.codeborne.selenide.*;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Configuration.pageLoadTimeout;
+
+import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.sleep;
 
 
 
 class PreTestBase {
-    //  пред-шаги
+    ///  пред-шаги
     @BeforeAll
+
     static void beforeAll() {
         baseUrl = "https://topgo.group/";
         Configuration.browser = "Chrome";
         Configuration.browserSize = "1920x1080";
 
     }
-    public void ValidatorOpenURL() {
+    /// проверка на совпадние URL
+    public void ValidatorURLPage() {
         switch (baseUrl) {
             case ("https://topgo.group/"):
                 System.out.println("URL открылся");
@@ -24,6 +26,21 @@ class PreTestBase {
                 break;
         }
     }
+    ///  проверка на указанние корректного браузера для открытия
+    public void BrowserCongiureValidatorOpenPage() {
+        switch (browser) {
+            case ("Chrome"), ("Firefox"), ("Egde"):
+                System.out.println("Указан корректный браузер");
+                ValidatorURLPage();
+            break;
+        }
+    }
+
+
+
+
+
+
     ///  коллекция локаторов button media соцсетей и использование на всех них hover эффекта
 
     private final  ElementsCollection ItemsHeaderMediaLocatorThree = Selenide.$$("a.header__media");
@@ -67,18 +84,10 @@ class PreTestBase {
     void OpenNewFormVariationsJobs() { FormForVariationsJob.click(); }
 
 
-
-
     ///  после шаги
     @AfterAll
     static void afterAll() {
         sleep(1_000);
     }
-
-
-
-
-
-
 
 }
