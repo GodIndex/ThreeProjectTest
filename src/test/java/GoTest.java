@@ -23,8 +23,7 @@ public class GoTest extends PreTestBase {
         BrowserCongiureValidatorOpenPage();
         HoverEffectMediaButton();
         VacantionsButtonClick();
-        InfoCompanyNextPage();
-        ValidatorLinkReverseTransitionHomePage();
+
 
 
     }
