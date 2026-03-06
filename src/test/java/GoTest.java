@@ -5,6 +5,10 @@ public class GoTest extends PreTestBase {
 
 
 
+
+
+
+    @Tag("Attach Params")
     @AfterEach
     void addAttachment() {
         Attach.screenshotAs("Last Screen");
@@ -13,11 +17,10 @@ public class GoTest extends PreTestBase {
     }
 
 
+    @Disabled
     @Tag("TogGo Collection")
     @DisplayName("TopGo Tests")
-
     @Test
-
     void FirstUnTest() {
 
         BrowserCongiureValidatorOpenPage();

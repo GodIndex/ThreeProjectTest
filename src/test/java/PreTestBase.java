@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 
 
 class PreTestBase {
+
     ///  пред-шаги
     @BeforeAll
 
@@ -35,8 +36,6 @@ class PreTestBase {
             break;
         }
     }
-
-
 
 
 
