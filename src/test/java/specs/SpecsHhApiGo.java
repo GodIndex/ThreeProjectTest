@@ -25,6 +25,5 @@ public class SpecsHhApiGo {
          .queryParam("text", "QA")
          .queryParam("per_page", 6);
 
-
 }
 

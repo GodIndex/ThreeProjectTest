@@ -1,0 +1,32 @@
+package specs;
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.specification.RequestSpecification;
+import org.junit.jupiter.api.BeforeAll;
+
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.with;
+
+public class TypeCodeSpecs {
+
+    @BeforeAll
+    public static void SetUpTypeCodeAPI() {
+
+        RestAssured.baseURI = "https://jsonplaceholder.typicode.com/posts/";
+
+    }
+
+    public static RequestSpecification GoTypeCodeSpec = with()
+
+            .log().uri()
+            .log().body()
+            .log().headers()
+
+            .contentType(ContentType.JSON);
+
+
+}
+
+
+

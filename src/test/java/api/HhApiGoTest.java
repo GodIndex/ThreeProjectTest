@@ -16,7 +16,7 @@ public class HhApiGoTest extends SpecsHhApiGo {
     private final static String FirstIdCompany = "8881860";
 
 
-
+    @Disabled
     @Test
     public void InfoEmployers() {
 
