@@ -9,6 +9,9 @@ import static org.hamcrest.Matchers.*;
 import static specs.SpecsHhApiGo.RequestGoTestSpec;
 
 
+
+
+
 public class HhApiGoTest extends SpecsHhApiGo {
 
 
@@ -16,12 +19,19 @@ public class HhApiGoTest extends SpecsHhApiGo {
     private final static String FirstIdCompany = "8881860";
 
 
+    @Tags(
+
+            {@Tag("HHapiTests"), @Tag("API")}
+
+
+    )
+
     @Disabled
     @Test
     public void InfoEmployers() {
 
-          given(RequestGoTestSpec) /// 1 /// Подготовка и одновременно начало синтаксиса теста (инициализация начального состояния системы)
-                /// Передать header, body и другие параметры (валидные) для теста
+          given(RequestGoTestSpec) /// 1 /// Подготовка и одновременно начало синтаксиса теста
+                /// Передача header, body и других параметров (валидных) для теста
 
 
 
@@ -45,12 +55,6 @@ public class HhApiGoTest extends SpecsHhApiGo {
 
                   .log().headers()
                   .log().body();
-
-
-
-
-
-
 
 
 

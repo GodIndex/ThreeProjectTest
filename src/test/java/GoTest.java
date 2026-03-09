@@ -4,10 +4,6 @@ import org.junit.jupiter.api.*;
 public class GoTest extends PreTestBase {
 
 
-
-
-
-
     @Tag("Attach Params")
     @AfterEach
     void addAttachment() {
@@ -17,7 +13,6 @@ public class GoTest extends PreTestBase {
     }
 
 
-    @Disabled
     @Tag("TogGo Collection")
     @DisplayName("TopGo Tests")
     @Test
@@ -26,6 +21,8 @@ public class GoTest extends PreTestBase {
         BrowserCongiureValidatorOpenPage();
         HoverEffectMediaButton();
         VacantionsButtonClick();
+        ValidatorLinkReverseTransitionHomePage();
+        OpenNewFormVariationsJobs();
 
 
 

@@ -7,13 +7,14 @@ import org.junit.jupiter.api.BeforeAll;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.with;
+import static io.restassured.http.ContentType.JSON;
 
 public class TypeCodeSpecs {
 
     @BeforeAll
     public static void SetUpTypeCodeAPI() {
 
-        RestAssured.baseURI = "https://jsonplaceholder.typicode.com/posts/";
+        baseURI = "https://jsonplaceholder.typicode.com/posts/";
 
     }
 
@@ -23,7 +24,7 @@ public class TypeCodeSpecs {
             .log().body()
             .log().headers()
 
-            .contentType(ContentType.JSON);
+            .contentType(JSON);
 
 
 }
