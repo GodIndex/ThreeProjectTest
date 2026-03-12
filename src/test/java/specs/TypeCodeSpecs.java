@@ -3,6 +3,7 @@ package specs;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
+import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeAll;
 
 import static io.restassured.RestAssured.baseURI;
@@ -18,16 +19,17 @@ public class TypeCodeSpecs {
 
     }
 
+
+
     public static RequestSpecification GoTypeCodeSpec = with()
+
 
             .log().uri()
             .log().body()
             .log().headers()
-
             .contentType(JSON);
-
-
 }
+
 
 
 

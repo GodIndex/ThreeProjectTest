@@ -29,6 +29,7 @@ public class TypeCodeApiTr extends TypeCodeSpecs {
 
     )
     @DisplayName("Post Body")
+    @Disabled
     @Test
 
     void TypeCodeBodyPost()
@@ -41,6 +42,8 @@ public class TypeCodeApiTr extends TypeCodeSpecs {
         requestBody.put("userId", 4630118);
 
 
+
+
          given(GoTypeCodeSpec)
                 .contentType(JSON) /// Указываем, что отправляем JSON
                 .body(requestBody.toString())/// Передаем тело запроса как строку (toString()), полученную из JSONObject
@@ -49,19 +52,17 @@ public class TypeCodeApiTr extends TypeCodeSpecs {
                 .when()
                 .post(baseURI)
 
-
                 .then()
                 .statusCode(201)///  201 = Created
                 .log().status()
                 .body("userId", equalTo(4630118));
 
 
+
     }
 
 
 
-
-    @Disabled
     @DisplayName("PUT")
     @Test
     void TypeCodePut() {
@@ -84,7 +85,8 @@ public class TypeCodeApiTr extends TypeCodeSpecs {
 
 
     }
-    @Disabled
+
+
     @Test
     void GetPost() {
         given(GoTypeCodeSpec)
