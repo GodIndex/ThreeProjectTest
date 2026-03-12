@@ -26,7 +26,6 @@ public class ApiLearnQA {
 @Test
     public void APILearnTests() {
 
-        JSONObject APILearnrequestBody = new JSONObject();
 
         /// Место для post создания
 
