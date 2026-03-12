@@ -11,13 +11,28 @@ class PreTestBase {
 
     ///  пред-шаги
     @BeforeAll
+    static void SetUpAll()
+    {
 
-    static void beforeAll() {
         baseUrl = "https://topgo.group/";
         Configuration.browser = "Chrome";
         Configuration.browserSize = "1920x1080";
+        pageLoadStrategy = "eager";
+        headless = true;
 
     }
+
+
+    ///  Проверка на указанние корректного браузера для открытия
+    public void BrowserCongiureValidatorOpenPage() {
+        switch (browser) {
+            case ("Chrome"), ("Firefox"), ("Egde"):
+                System.out.println("Указан корректный браузер");
+                ValidatorURLPage();
+                break;
+        }
+    }
+
     /// Проверка на совпадние URL
     public void ValidatorURLPage() {
         switch (baseUrl) {
@@ -27,37 +42,28 @@ class PreTestBase {
                 break;
         }
     }
-    ///  Проверка на указанние корректного браузера для открытия
-    public void BrowserCongiureValidatorOpenPage() {
-        switch (browser) {
-            case ("Chrome"), ("Firefox"), ("Egde"):
-                System.out.println("Указан корректный браузер");
-                ValidatorURLPage();
-            break;
-        }
-    }
+
 
     ///  Коллекция локаторов button media соцсетей и использование на всех них hover эффекта
 
     private final  ElementsCollection ItemsHeaderMediaLocatorThree = Selenide.$$("a.header__media");
 
-    void HoverEffectMediaButton() {
-
-        ItemsHeaderMediaLocatorThree.get(0).hover();
-        ItemsHeaderMediaLocatorThree.get(1).hover();
-        ItemsHeaderMediaLocatorThree.get(2).hover();
-
+    void HoverEffectMediaButton()
+    {
+        ItemsHeaderMediaLocatorThree.asFixedIterable().forEach(element -> element.hover());
     }
-    /// Локатор и клик кнопки вакансии из списка 3 кнопок
 
+
+
+    /// Локатор и клик кнопки вакансии из списка 3 кнопок
     private final SelenideElement VacantionLocatorButtons = Selenide.$x("//a[@href =\"https://spb.hh.ru/employer/11013820?hhtmFrom=vacancy\" and @class =\"header__link\"]");
 
-    void VacantionsButtonClick() {
+    void VacantionsButtonClick()
+    {
         VacantionLocatorButtons.click();
-
     }
-    /// Локатор и проверка первого слова в описании после нажатия вакансии
 
+    /// Локатор и проверка первого слова в описании после нажатия вакансии
     private final  SelenideElement CompanyInfoClick = Selenide.$x("employer-page-tabs-desktop-go-DESCRIPTION employer-page-tabs-desktop-active");
     void InfoCompanyNextPage() {
         CompanyInfoClick.click();
@@ -67,7 +73,8 @@ class PreTestBase {
 
     private final SelenideElement ShouldBeLinkNameCompanyLocator = Selenide.$x("//div[text() = 'https://topgo.group/']");
 
-    void ValidatorLinkReverseTransitionHomePage() {
+    void ValidatorLinkReverseTransitionHomePage()
+    {
         ShouldBeLinkNameCompanyLocator.shouldBe((Condition.text("https://topgo.group/")));
     }
 
