@@ -18,9 +18,9 @@ AgeButtonLocator ageButtonLocator = new AgeButtonLocator();
 
 
     @Tag
-            ("Wine Collection")
+            ("WineCollection")
     @DisplayName
-            ("SimpleWine Tests")
+            ("SimpleWineTests")
     @Test
 
     public void WineSimplePrimaryTests()
@@ -31,7 +31,8 @@ AgeButtonLocator ageButtonLocator = new AgeButtonLocator();
                 .ValidatorWineURLPage();
         ageButtonLocator
                 .ClickAgeVerification();
-        sleep(3_000);
+
+
 
 
     }
