@@ -1,4 +1,4 @@
-package pages;
+package pages.TopGo;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
@@ -17,6 +17,7 @@ public class HomePageMediaLocator {
 
     public void HoverEffectMediaButton()
     {
+
         CollectionItemsHeaderMediaLocator.asFixedIterable().forEach(SelenideElement::hover);
 
 

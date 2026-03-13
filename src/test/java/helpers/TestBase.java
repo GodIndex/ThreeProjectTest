@@ -2,7 +2,6 @@ package helpers;
 
 import com.codeborne.selenide.*;
 import org.junit.jupiter.api.*;
-import pages.SwitchPageValid;
 
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.sleep;

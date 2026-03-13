@@ -3,10 +3,12 @@ package TopGoPrimary;
 import helpers.Attach;
 import helpers.TestBase;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.devtools.v142.page.Page;
-import pages.HomePageMediaLocator;
-import pages.SwitchPageValid;
-import pages.VacationsButtonLocator;
+import pages.TopGo.HomePageMediaLocator;
+import pages.TopGo.HoverRatingLocator;
+import pages.TopGo.SwitchPageValid;
+import pages.TopGo.VacationsButtonLocator;
+
+import static com.codeborne.selenide.Selenide.sleep;
 
 
 public class GoTest extends TestBase {
@@ -14,6 +16,7 @@ public class GoTest extends TestBase {
     SwitchPageValid switchPageValid = new SwitchPageValid();
     HomePageMediaLocator homePageMediaLocator = new HomePageMediaLocator();
     VacationsButtonLocator vacationsButtonLocator = new VacationsButtonLocator();
+    HoverRatingLocator hoverRatingLocator = new HoverRatingLocator();
 
     @AfterEach
     public void addAttachment() {
@@ -32,14 +35,23 @@ public class GoTest extends TestBase {
     public void FirstUnGoTest() {
         Headless_BaseUrl();
 
-        switchPageValid.
-                ValidatorNameBrowser();
-        homePageMediaLocator.
-                HoverEffectMediaButton();
-        vacationsButtonLocator.
-                TeamConditionTextButton();
-        vacationsButtonLocator.
-                VacationsButtonClick();
+        switchPageValid
+                .ValidatorNameBrowser();
+        homePageMediaLocator
+                .HoverEffectMediaButton();
+        vacationsButtonLocator
+                .TeamConditionTextButton();
+        vacationsButtonLocator
+                .VacationsButtonClick();
+
+        sleep(3_000);
+
+        hoverRatingLocator
+                .OpenHoverEffectRating();
+        hoverRatingLocator
+                .OpenNewFormVariationsJobs();
+
+
 
 
 

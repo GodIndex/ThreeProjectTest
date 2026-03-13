@@ -1,4 +1,4 @@
-package pages;
+package pages.TopGo;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
@@ -12,8 +12,7 @@ public class VacationsButtonLocator {
     private final ElementsCollection HeaderLiThreeElement =
             Selenide.elements(By.cssSelector("li.header__li"));
 
-    public VacationsButtonLocator VacationsButtonClick()
-    {
+    public VacationsButtonLocator VacationsButtonClick() {
 //        HeaderLiThreeElement.asFixedIterable().stream()
 //                        .filter(selenideElement -> selenideElement.text()
 //                       .equals("Вакансии")).findFirst().get().click(); /// Stream вариант
@@ -25,19 +24,16 @@ public class VacationsButtonLocator {
 
         return this;
     }
-    public VacationsButtonLocator TeamConditionTextButton()
-    {
-      final String result = HeaderLiThreeElement.stream()
-                .filter( selenideElement -> selenideElement.text()
+
+    public VacationsButtonLocator TeamConditionTextButton() {
+        final String result = HeaderLiThreeElement.stream()
+                .filter(selenideElement -> selenideElement.text()
                         .equals("Команда")).findFirst().get().getOwnText();
 
-       assertEquals("Команда", result);
+        assertEquals("Команда", result);
 
-       return this;
+        return this;
 
 
     }
-
-
-
 }

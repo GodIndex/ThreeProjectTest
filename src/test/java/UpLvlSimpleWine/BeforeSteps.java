@@ -1,4 +1,4 @@
-package UpLvlTests;
+package UpLvlSimpleWine;
 
 public class BeforeSteps {
 }
